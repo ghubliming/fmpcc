@@ -1,0 +1,24 @@
+dt: 1.0
+tightening: 0.025
+body_radius: 0.31
+planning_pad: 0.0
+geometries:
+  corridor_tilt:
+    workspace: {lb: [-4.0, -.inf, 0.30], ub: [4.0, .inf, 1.80]}
+    halfspaces:
+      - {line: [[-2.0, -0.95], [2.0, -0.95]], side: above, x_active: [-2.0, 2.0]}
+      - {line: [[-2.0, 0.95], [2.0, 0.95]], side: below, x_active: [-2.0, 2.0]}
+      - {line: [[-2.0, 0.95], [2.0, -0.05]], side: below, x_active: [-2.0, 2.0], lean: {deg: -60, z_ref: 1.11}}
+    disks: &caps
+      - {dimensions: [x, y], center: [-2.0, -1.0], radius: 0.05}
+      - {dimensions: [x, y], center: [2.0, -1.0], radius: 0.05}
+      - {dimensions: [x, y], center: [-2.0, 1.0], radius: 0.05}
+      - {dimensions: [x, y], center: [2.0, 1.0], radius: 0.05}
+  corridor_hump:
+    workspace: {lb: [-4.0, -.inf, 0.30], ub: [4.0, .inf, 2.80]}
+    halfspaces:
+      - {line: [[-2.0, -0.95], [2.0, -0.95]], side: above, x_active: [-2.0, 2.0]}
+      - {line: [[-2.0, 0.95], [2.0, 0.95]], side: below, x_active: [-2.0, 2.0]}
+      - {plane: xz, line: [[-1.5, 0.0], [0.0, 1.10]], side: above, x_active: [-1.5, 0.0]}
+      - {plane: xz, line: [[0.0, 1.10], [1.5, 0.0]], side: above, x_active: [0.0, 1.5]}
+    disks: *caps

@@ -1,0 +1,22 @@
+environment: uav
+name: uav_corridor_tilt
+constraints: ../constraints/uav_corridor.yaml
+scene: corridor
+scene_xml: corridor_wide
+geometry: corridor_tilt
+seeds: [6]
+flights: 10
+episode_limit: 396
+finish_x: 2.0
+candidates: 4
+steps: 1
+activation_threshold: 0.5
+controller: geometric
+bind: setpoint
+action_bound: false
+tightened: true
+constant_margin: 1.0
+variants: [unguided, 'per_step:random', 'per_step:cumulative_cost', 'per_step:temporal_consistency', 'endpoint:random', 'endpoint:cumulative_cost', 'endpoint:temporal_consistency']
+checkpoint: {diffusion: best, fm: best, analytic_meanfm: best, ci_meanfm: latest}
+weights: {diffusion: raw, fm: raw, analytic_meanfm: raw, ci_meanfm: raw}
+limits: [[-3.5, 3.5], [-1.5, 1.5]]

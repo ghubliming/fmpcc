@@ -1,0 +1,5 @@
+base: avoiding.yaml
+name: uav_pillars
+plant: quadrotor
+variants: ['per_step:temporal_consistency']
+tightened: [true]

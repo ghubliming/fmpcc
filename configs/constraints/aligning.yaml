@@ -1,0 +1,7 @@
+dt: 1.0
+tightening: 0.03
+workspace: {lb: [0.20, -0.45, 0.02], ub: [0.80, 0.45, 0.50]}
+dynamics: [[des_x, dx], [des_y, dy], [des_z, dz], [x, dx], [y, dy], [z, dz]]
+halfspaces: [[[0.65, 0.45], [0.80, -0.45], below]]
+disks: [{dimensions: [x, y], center: [0.50, 0.00], radius: 0.06}]
+limits: [[0.2, 0.8], [-0.45, 0.45]]

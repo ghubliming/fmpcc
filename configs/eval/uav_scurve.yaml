@@ -1,0 +1,12 @@
+base: uav_corridor_tilt.yaml
+name: uav_scurve
+constraints: ../constraints/uav_scurve.yaml
+scene: s_curve
+scene_xml: s_curve
+geometry: s_curve
+episode_limit: 871
+finish_x: 3.0
+bind: measured
+action_bound: true
+constant_margin: 0.001
+limits: [[-3.6, 3.6], [-1.8, 1.8]]

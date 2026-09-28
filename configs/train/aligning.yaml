@@ -1,0 +1,52 @@
+environment: aligning
+dataset:
+  root: datasets/d3il/aligning/all_data
+  horizon: 8
+training:
+  steps: 100000
+  train_split: 0.9
+  split_seed: 42
+  lr_warmup: 1000
+  ema_decay: 0.995
+  ema_start: 2000
+  ema_every: 10
+  log_every: 1000
+  test_batches: 100
+  checkpoints: 5
+  workers: 2
+  wandb: false
+  wandb_project: fmpcc
+models:
+  diffusion:
+    steps: 20
+    action_weight: 10
+    batch_size: 64
+    accumulate: 2
+    lr: 2.0e-4
+  fm:
+    time_beta: [1.5, 1.0]
+    action_weight: 1
+    batch_size: 64
+    accumulate: 2
+    lr: 2.0e-4
+  analytic_meanfm:
+    time_logit_normal: [-0.4, 1.0]
+    fm_share: 0.5
+    adaptive_p: 1.0
+    adaptive_eps: 0.01
+    batch_size: 64
+    accumulate: 2
+    lr: 2.0e-4
+    gradient_clip: 1.0
+  ci_meanfm:
+    time_logit_normal: [-0.4, 1.0]
+    fm_share: 0.5
+    adaptive_eps: 1.0e-3
+    alpha_end: 0.2
+    alpha_gamma: 25.0
+    alpha_clamp: 0.005
+    target_clamp: 4.0
+    batch_size: 64
+    accumulate: 2
+    lr: 2.0e-4
+    gradient_clip: 1.0

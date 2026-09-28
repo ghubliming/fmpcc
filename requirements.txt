@@ -1,0 +1,14 @@
+# PyTorch 2.2.2 (CUDA 12.1 build) and torchvision 0.17.2 are installed with conda first, see README.
+numpy==1.26.4
+scipy==1.13.1
+mujoco==2.3.7
+pin==2.7.0
+gym==0.26.2
+gin-config==0.5.0
+opencv-python==4.10.0.84
+imageio==2.34.1
+glfw==2.7.0
+PyYAML==6.0.1
+einops==0.8.0
+matplotlib==3.9.0
+wandb==0.17.5

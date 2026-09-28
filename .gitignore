@@ -1,0 +1,7 @@
+__pycache__/
+*.egg-info/
+logs/
+datasets/
+wandb/
+*.pt
+fmpcc/envs/d3il/models/mj/robot/panda_tmp_*.xml

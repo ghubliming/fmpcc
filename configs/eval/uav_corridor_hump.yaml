@@ -1,0 +1,3 @@
+base: uav_corridor_tilt.yaml
+name: uav_corridor_hump
+geometry: corridor_hump

@@ -1,0 +1,15 @@
+environment: avoiding
+name: avoiding
+plant: panda
+constraints: ../constraints/avoiding.yaml
+seeds: [6, 7, 8, 9, 10]
+episodes: 2
+episode_limit: 200
+candidates: 4
+steps: 20
+activation_threshold: 0.5
+geometries: [top_right_hard, top_left_hard, both_hard]
+variants: [unguided, 'per_step:random', 'per_step:cumulative_cost', 'per_step:temporal_consistency', 'endpoint:random', 'endpoint:cumulative_cost', 'endpoint:temporal_consistency']
+tightened: [false, true]
+checkpoint: {diffusion: best, fm: best, analytic_meanfm: best, ci_meanfm: 80000}
+weights: {diffusion: raw, fm: raw, analytic_meanfm: ema, ci_meanfm: ema}
